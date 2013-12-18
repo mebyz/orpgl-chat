@@ -95,6 +95,7 @@ YShout.prototype = {
 
 		
 		this.prefs = jQuery.extend(updates.prefs, this.options.prefs);
+		this.prefs.defaultNickname= this.options.defaultNickname;
 		this.initForm();
 		this.initRefresh();
 		this.initLinks();

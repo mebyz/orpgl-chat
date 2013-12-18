@@ -9,9 +9,11 @@
 		<link rel="stylesheet" href="css/style.css" />
 				
 		<script type="text/javascript">
+		var v = <?php echo '"'.($_GET['nickName']).'"'; ?>;
 			new YShout({
 				yPath: '.',
-				yLink: 'rars'
+				yLink: 'rars',
+				defaultNickname : v
 			});
 			window.setInterval(function() {
 			  var elem = document.body;
