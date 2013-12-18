@@ -22,6 +22,7 @@ YShout.prototype = {
 	p: [],
 		
 	init: function(options) {
+
 		yShout = this;
 		var self = this;
 		
@@ -92,7 +93,6 @@ YShout.prototype = {
 	
 		var self = this;
 		
-
 		
 		this.prefs = jQuery.extend(updates.prefs, this.options.prefs);
 		this.prefs.defaultNickname= this.options.defaultNickname;
@@ -180,6 +180,8 @@ YShout.prototype = {
 
 		$('#ys-input-submit').click(function(){ self.send.apply(self) });
 		$('#ys-post-form').submit(function(){ return false });
+
+		$('#ys-input-nickname').attr('disabled', true);
 	},
 
 	initRefresh: function() {
@@ -328,7 +330,7 @@ YShout.prototype = {
 			$(input).removeClass('ys-input-invalid').addClass('ys-input-valid');
 		}
 
-		if (nickname == '' ||	nickname == this.prefs.defaultNickname)
+		if (nickname == '')//||	nickname == this.prefs.defaultNickname)
 			showInvalid('#ys-input-nickname');
 		else
 			showValid('#ys-input-nickname');
